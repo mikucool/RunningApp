@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.google.dagger.hilt.android)
+    id("kotlin-kapt")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -42,6 +45,37 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    // viewmodel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime)
+    // room
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
+    // coroutine
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+    // navigation
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    // glide
+    implementation(libs.glide)
+    kapt(libs.compiler)
+    // google maps location service
+    implementation(libs.play.services.location)
+    implementation(libs.play.services.maps)
+    // dagger
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.android.compiler)
+    // easy permissions
+    implementation(libs.easypermissions)
+    // timber
+    implementation(libs.timber)
+    // MPAndroidChart
+    implementation(libs.mpandroidchart)
+    // lifecycle extension
+    implementation(libs.arch.lifecycle.extensions)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
